@@ -80,7 +80,8 @@
 		   del pacient paràmetre implícit i el del pacient 'p' són
 		   identics (true) o no ho són (false) */
 		bool Pacient::compare(const Pacient &p) const{
-
+			if(this->gravetat == p.gravetat) return true;
+			else return false;
 		}
 
 
@@ -97,12 +98,14 @@
 		   estàndard d'entrada com a nom, edat, motiu i gravetat, 
 		   respectivament */			
 		istream& operator>>(istream &is, Pacient &p){
-
+			is >> p.nom >> p.edat >> p.motiu >> p.gravetat;
+			return is;
 		}
 		
 		/* Pre: cert */
 		/* Post: s'han escrit els atributs nom, edat, motiu i gravetat del
            pacient 'p' al canal estàndard de sortida */
 		ostream& operator<<(ostream &os, const Pacient &p){
-			
+			os << p.nom << " " << p.edat << " " << p.motiu << " " << p.gravetat;
+			return os; 
 		}
