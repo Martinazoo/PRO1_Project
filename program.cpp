@@ -19,16 +19,18 @@ int main() {
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
         if (inst == "alta_pacient") {
-            
-			// completar el codi
+          Pacient p; 
+          cin >> p; 
+          cout << p << endl;   
+			
 
         } else if (inst == "baixa_pacient") {
             
-			// completar el codi
+			
 
         } else if (inst == "alta_doctor") {
             
-			// completar el codi
+			
 
         } 
 		// ...
