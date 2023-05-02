@@ -1,5 +1,6 @@
 #ifndef DOCTOR_HPP
 #define DOCTOR_HPP
+#include <list>
 #include "Visita.hpp"
 #include "Pacient.hpp"
 
@@ -14,6 +15,25 @@ using namespace std;
 
 class Doctor {
 
-};
+    private:
+        string nom;
+        list<Visita> visites;
 
+    public:
+        //-------------
+		// Constructors
+		//-------------
+		
+		/* Pre: cert */
+		/* Post: crea un doctor buit */
+        Doctor();
+
+        Doctor(string nom);
+
+        //Consultors
+
+        string getName() const;
+
+        list<Visita> getList() const;
+};
 #endif
