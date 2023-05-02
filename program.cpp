@@ -14,28 +14,55 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
+  Pacient p;
+  Doctor d;
 	
 	// Processar instruccions
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
-        if (inst == "alta_pacient") {
-          Pacient p; 
+        if (inst == "alta_pacient") { 
           cin >> p; 
-          cout << p << endl;   
+          cout << p << endl;
+          h.addPacient(p);
 			
 
         } else if (inst == "baixa_pacient") {
-            
-			
+          string name;
+          cin >> name;
+          if (not h.pacientExists(name)) cout << "Error: " << endl;
+          else {
+          
+          }
 
         } else if (inst == "alta_doctor") {
-            
-			
+          cin >> d;
+          if(h.doctorExists(d.getName())) cout << "Error: " << endl;
+          else {
+            h.addDoctor(d);
+          }
 
-        } 
-		// ...
-		// completar el codi
-		// ...
+        } else if (inst == "llista_espera"){
+          h.printPacients();
+        } else if (inst == "tractar_seguent_pacient"){
+          /* code */
+        } else if (inst == "modificar_estat_pacient"){
+          string name;
+          cin >> name ;
+          //if(h.pacientExists()) h.getPacients(). //pair amb iterator?? o com sabem en quina posicio de la llista esta el pacient
+          //despres fem un actualitzar estat del pacient
+        } else if (inst == "programar_visita"){
+          /* code */
+        } else if (inst == "cancellar_visita"){
+          /* code */
+        } else if (inst == "mostrar_programacio_visites"){
+          /* code */
+        }
+        
+        
+        
+        
+        
+		
     }
     cout << "fi" << endl;
 }

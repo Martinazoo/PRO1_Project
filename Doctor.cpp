@@ -21,3 +21,8 @@
     {
         return visites;
     }
+
+    istream& operator>>(istream &is, Doctor &d){
+			is >> d.nom;
+			return is;
+		}

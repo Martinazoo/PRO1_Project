@@ -35,5 +35,7 @@ class Doctor {
         string getName() const;
 
         list<Visita> getList() const;
+
+        friend istream& operator>>(istream &is, Doctor &d);
 };
 #endif
