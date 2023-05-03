@@ -14,13 +14,11 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
-  Pacient p;
-  Doctor d;
-	
 	// Processar instruccions
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
         if (inst == "alta_pacient") { 
+          Pacient p;
           cin >> p; 
           cout << p << endl;
           h.addPacient(p);
@@ -35,6 +33,7 @@ int main() {
           }
 
         } else if (inst == "alta_doctor") {
+          Doctor d; 
           cin >> d;
           if(h.doctorExists(d.getName())) cout << "Error: " << endl;
           else {
