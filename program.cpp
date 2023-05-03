@@ -21,7 +21,10 @@ int main() {
           Pacient p;
           cin >> p; 
           cout << p << endl;
-          h.addPacient(p);
+          if(!h.pacientExists(p));
+          else {
+            cout << "Error: " << endl;
+          }
 			
 
         } else if (inst == "baixa_pacient") {

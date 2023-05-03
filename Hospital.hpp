@@ -33,8 +33,8 @@ class Hospital {
         list<Doctor> getDoctors();
         /* Pre: un nom d'un pacient */
         /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
-        bool pacientExists (string nom)const;
-        bool doctorExists (string nom) const;
+        bool pacientExists (Pacient p)const;
+        bool doctorExists (Doctor d) const;
         void printPacients ()const;
         //Modificadors
         /* Pre: una llista de Pacient pacients , i un Pacient p */
