@@ -38,7 +38,7 @@ int main() {
         } else if (inst == "alta_doctor") {
           Doctor d; 
           cin >> d;
-          if(h.doctorExists(d.getName())) cout << "Error: " << endl;
+          if(h.doctorExists(d)) cout << "Error: " << endl;
           else {
             h.addDoctor(d);
           }
