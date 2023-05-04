@@ -69,6 +69,7 @@
     }
 
     void Hospital::printPacients()const{
+        /*
         list<Pacient>::const_iterator it = pacients.begin();
         bool espai = false;
         while (it != pacients.end()){
@@ -77,13 +78,15 @@
             it++;
         }
         cout << endl;
+        */
     }
     //Modificadors
     /* Pre: una llista de Pacient pacients , i un Pacient p */
     /* Post: afegeix un Pacient al final de la llista */
     void Hospital::addPacient(Pacient &p)
     {
-        pacients.push_back(p);
+        pacients.push(p);
+        bstpacient.insert(p);
         
     }
     void Hospital::addDoctor(Doctor &d)

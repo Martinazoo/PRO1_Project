@@ -26,3 +26,6 @@
 			is >> d.nom;
 			return is;
 		}
+    list<Visita> Doctor::addvisita(Pacient p, Data d){
+        
+    }

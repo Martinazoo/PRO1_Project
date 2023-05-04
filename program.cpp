@@ -15,7 +15,6 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
-  // BST sp; 
   //Queue();
 	// Processar instruccions
     string inst;
@@ -25,7 +24,7 @@ int main() {
           cin >> p; 
           cout << inst << " " << p << endl;
           if(!h.pacientExists(p)){
-            //S'afegeix al registre i a la cua de prioritat
+            h.addPacient(p);
           }
           else {
             cout << "  error" << endl;
@@ -58,7 +57,14 @@ int main() {
           //if(h.pacientExists()) h.getPacients(). //pair amb iterator?? o com sabem en quina posicio de la llista esta el pacient
           //despres fem un actualitzar estat del pacient
         } else if (inst == "programar_visita"){
-          /* code */
+          string namep, named;
+          Data d;
+          cin >> namep >> named >> d;
+          if(!h.pacientExists(namep) or !h.doctorExists(named)) cout << "  error" << endl;
+          else{
+            
+          }
+
         } else if (inst == "cancellar_visita"){
           /* code */
         } else if (inst == "mostrar_programacio_visites"){

@@ -37,5 +37,6 @@ class Doctor {
         list<Visita> getList() const;
 
         friend istream& operator>>(istream &is, Doctor &d);
+        list<Visita> addvisita (Pacient p, Data d);
 };
 #endif
