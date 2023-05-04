@@ -82,6 +82,7 @@
     void Hospital::addPacient(Pacient &p)
     {
         pacients.push_back(p);
+        
     }
     void Hospital::addDoctor(Doctor &d)
     {

@@ -3,6 +3,7 @@
 #include "Doctor.hpp"
 #include "PriorityQueue.hpp"
 #include "BST.hpp"
+#include <list>
 
 using namespace std; 
 

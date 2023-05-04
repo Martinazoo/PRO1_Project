@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Hospital.hpp"
-
+#include "PriorityQueue.hpp"
 using namespace std;
 
 /** Programa principal
@@ -14,6 +14,7 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
+  //Queue();
 	// Processar instruccions
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
@@ -21,16 +22,18 @@ int main() {
           Pacient p;
           cin >> p; 
           cout << p << endl;
-          if(!h.pacientExists(p));
+          if(!h.pacientExists(p)){
+            //S'afegeix al registre i a la cua de prioritat
+          }
           else {
-            cout << "Error: " << endl;
+            cout << "  error" << endl;
           }
 			
 
         } else if (inst == "baixa_pacient") {
           string name;
           cin >> name;
-          if (not h.pacientExists(name)) cout << "Error: " << endl;
+          if (not h.pacientExists(name)) cout << "  error" << endl;
           else {
           
           }
@@ -38,7 +41,7 @@ int main() {
         } else if (inst == "alta_doctor") {
           Doctor d; 
           cin >> d;
-          if(h.doctorExists(d)) cout << "Error: " << endl;
+          if(h.doctorExists(d)) cout << "  error" << endl;
           else {
             h.addDoctor(d);
           }
@@ -59,7 +62,9 @@ int main() {
         } else if (inst == "mostrar_programacio_visites"){
           /* code */
         }
-        
+        else {
+          cout << "  error" << endl; 
+        }
         
         
         
