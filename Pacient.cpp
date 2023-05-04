@@ -106,6 +106,6 @@
 		/* Post: s'han escrit els atributs nom, edat, motiu i gravetat del
            pacient 'p' al canal estàndard de sortida */
 		ostream& operator<<(ostream &os, const Pacient &p){
-			os << p.nom << " " << p.edat << " " << p.motiu << " " << p.gravetat;
+			os << p.nom << "  " << p.edat << " " << p.motiu << " " << p.gravetat;
 			return os; 
 		}

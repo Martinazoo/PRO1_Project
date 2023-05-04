@@ -3,7 +3,6 @@
 #include "Doctor.hpp"
 #include "PriorityQueue.hpp"
 #include "BST.hpp"
-#include <list>
 
 using namespace std; 
 
@@ -12,7 +11,8 @@ class Hospital {
     /*  Ha de representar tota la informaci ́o necess`aria per gestionar el servei
     d’urg`encies format pel conjunt de pacients, el conjunt de doctors i la llista d’espera, i
     oferir els m`etodes necessaris per poder-hi operar  */
-        list<Pacient> pacients;
+        Queue<Pacient> pacients;
+        BST<Pacient> searchpacient;
         list<Doctor> doctors;
         
 
@@ -29,7 +29,7 @@ class Hospital {
 
         /* Pre: cert */
         /* Post: retorna una llista de Pacient */
-        list<Pacient> getPacients();
+        Queue<Pacient> getPacients();
 
         list<Doctor> getDoctors();
         /* Pre: un nom d'un pacient */
