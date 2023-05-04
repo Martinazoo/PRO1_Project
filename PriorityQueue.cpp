@@ -108,12 +108,23 @@ void Queue<T>::push(T value) {
 
 template <typename T>
 void Queue<T>::remove(T value) {
+	last = NULL;
+	bool trobat = false;
+	while(first != NULL){
+		if(first->value == value){
+			trobat = true; 
+		}
+	}
+
+}
+/*
+template <typename T>
+void Queue<T>::remove(T value) {
 	
 	// PROGRAM THIS METHOD
 
 }
-
-
+*/
 //-----------
 // Consultors
 //-----------

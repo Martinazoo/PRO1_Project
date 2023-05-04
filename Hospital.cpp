@@ -37,16 +37,16 @@
             bool cond4 = p.getGravetat() == it->getGravetat();
             if (cond1 and cond2 and cond3 and cond4) return true;
             */
-            if(p.getNom() == it->getNom()){
-                if(p.getEdat() == it->getEdat()){
-                    if(p.getMotiu() == it->getMotiu()){
-                        if(p.getGravetat() == it->getGravetat()) return true;
+            if(p.getNom() != it->getNom()){
+                if(p.getEdat() != it->getEdat()){
+                    if(p.getMotiu() != it->getMotiu()){
+                        if(p.getGravetat() == it->getGravetat()) return false;
                     }
                 }
             }
             ++it;
         }
-        return false;
+        return true;
     }
 
     bool Hospital::doctorExists(Doctor d) const 
@@ -58,12 +58,12 @@
             bool cond2 = d.getList() == it->getList();
             if(cond1 and cond2) return true;
             */
-            if(d.getName() == it->getName()){
-                if(d.getList() == it->getList()) return true;
+            if(d.getName() != it->getName()){
+                if(d.getList() != it->getList()) return false;
             }
             ++it;
         }
-        return false;
+        return true;
     }
 
     void Hospital::printPacients()const{
