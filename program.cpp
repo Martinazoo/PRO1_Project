@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Hospital.hpp"
 #include "PriorityQueue.hpp"
+#include "BST.hpp"
 using namespace std;
 
 /** Programa principal
@@ -14,6 +15,7 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
+  // BST sp; 
   //Queue();
 	// Processar instruccions
     string inst;
@@ -21,7 +23,7 @@ int main() {
         if (inst == "alta_pacient") { 
           Pacient p;
           cin >> p; 
-          cout << p << endl;
+          cout << inst << " " << p << endl;
           if(!h.pacientExists(p)){
             //S'afegeix al registre i a la cua de prioritat
           }

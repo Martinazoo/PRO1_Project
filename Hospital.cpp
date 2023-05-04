@@ -15,7 +15,7 @@
         
     /* Pre: cert */
     /* Post: retorna una llista de Pacient */
-    list<Pacient> Hospital::getPacients()
+    Queue<Pacient> Hospital::getPacients()
     {
         return pacients;
     }
@@ -28,15 +28,15 @@
     /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
     bool Hospital::pacientExists (Pacient p)const
     {
-        list<Pacient>::const_iterator it = pacients.begin();
+        /* list<Pacient>::const_iterator it = pacients.begin();
         while (it != pacients.end()) {
-            /*
+            
             bool cond1 = p.getNom() == it->getNom();
             bool cond2 = p.getEdat() == it->getEdat();
             bool cond3 = p.getMotiu() == it->getMotiu();
             bool cond4 = p.getGravetat() == it->getGravetat();
             if (cond1 and cond2 and cond3 and cond4) return true;
-            */
+            
             if(p.getNom() != it->getNom()){
                 if(p.getEdat() != it->getEdat()){
                     if(p.getMotiu() != it->getMotiu()){
@@ -46,7 +46,9 @@
             }
             ++it;
         }
-        return true;
+        return true; 
+        canviar aquesta cerca per mitja de la cerca d'arbres */
+        
     }
 
     bool Hospital::doctorExists(Doctor d) const 
