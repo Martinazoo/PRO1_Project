@@ -15,7 +15,6 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
-  //Queue();
 	// Processar instruccions
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
@@ -36,7 +35,7 @@ int main() {
           cin >> name;
           if (not h.pacientExists(name)) cout << "  error" << endl;
           else {
-          
+            
           }
 
         } else if (inst == "alta_doctor") {
