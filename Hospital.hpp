@@ -11,7 +11,8 @@ class Hospital {
     /*  Ha de representar tota la informaci ́o necess`aria per gestionar el servei
     d’urg`encies format pel conjunt de pacients, el conjunt de doctors i la llista d’espera, i
     oferir els m`etodes necessaris per poder-hi operar  */
-        Queue<Pacient> pacients;
+        Queue<Pacient> pacients; //print queue fer una copia de la cua i buidarla
+        //list<Pacient> regpacient;
         BST<Pacient> bstpacient;
         list<Doctor> doctors;
         
