@@ -26,9 +26,14 @@
     }
     /* Pre: un nom d'un pacient */
     /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
-    bool Hospital::pacientExists (Pacient p)const //Aixo haura de ser un pair
+    pair<bool,Pacient> Hospital::pacientExists (Pacient p)const //Aixo haura de ser un pair
     {
-        if(bstpacient.find(p) == true) return true;
+        pair<bool,Pacient> pairpacient;
+        if(bstpacient.find(p).first == true){
+            pairpacient.first = true;
+            pairpacient.second = p;
+            return pairpacient;
+        } 
         /* list<Pacient>::const_iterator it = pacients.begin();
         while (it != pacients.end()) {
             
