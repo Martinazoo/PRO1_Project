@@ -106,6 +106,8 @@ void BST<T>::setValue(const T& d, const T& value) {
 //-----------
 // Consultors
 //-----------
+
+/*
 template <typename T>
 void BST<T>::find_aux(Item *r, const T& d, bool& trobat){
 
@@ -118,13 +120,14 @@ void BST<T>::find_aux(Item *r, const T& d, bool& trobat){
 		} 
 	} 
 }
+*/
 
 
 template <typename T> /* Retorna un boolea i un value */
 pair<bool, T> BST<T>::find(const T& d) const { 
 
 	bool trobat = false;
-	find_aux(root, d, trobat);
+	//find_aux(root, d, trobat);
 
 	return pair<bool, T>(trobat, d);	
 }
