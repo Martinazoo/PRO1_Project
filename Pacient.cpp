@@ -110,7 +110,7 @@
 			return os; 
 		}
 
-		bool Pacient::operator==(const Pacient &p){
+		bool Pacient::operator==(const Pacient &p)const{
 			if(this->nom == p.getNom()){
 				return true;
 			}
@@ -118,7 +118,6 @@
 				return false;
 			}
 		}
-		bool Pacient::operator< (const Pacient &p){
-			if (this->nom < p.getNom()) return true;
-			else return false;
+		bool Pacient::operator< (const Pacient &p)const { 
+			return this->nom < p.getNom();
 		}

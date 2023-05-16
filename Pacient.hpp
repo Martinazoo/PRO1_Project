@@ -95,7 +95,7 @@ class Pacient {
            pacient 'p' al canal estàndard de sortida */
 		friend ostream& operator<<(ostream &os, const Pacient &p); 
 
-		bool operator== (const Pacient &p);
-		bool operator< (const Pacient &p);
+		bool operator== (const Pacient &p)const;
+		bool operator< (const Pacient &p)const;
 };
 #endif
