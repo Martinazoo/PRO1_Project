@@ -118,3 +118,7 @@
 				return false;
 			}
 		}
+		bool Pacient::operator< (const Pacient &p){
+			if (this->nom < p.getNom()) return true;
+			else return false;
+		}

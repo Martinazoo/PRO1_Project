@@ -22,7 +22,7 @@ int main() {
           Pacient p;
           cin >> p; 
           cout << inst << " " << p << endl;
-          if(!h.pacientExists(p)){
+          if(!h.pacientExists(p).first){
             h.addPacient(p);
           }
           else {
@@ -33,7 +33,7 @@ int main() {
         } else if (inst == "baixa_pacient") {
           string name;
           cin >> name;
-          if (not h.pacientExists(name)) cout << "  error" << endl;
+          if (not h.pacientExists(name).first) cout << "  error" << endl;
           else {
             
           }
@@ -59,7 +59,7 @@ int main() {
           string namep, named;
           Data d;
           cin >> namep >> named >> d;
-          if(!(h.pacientExists(namep)) or !h.doctorExists(named)) cout << "  error" << endl;
+          if(!(h.pacientExists(namep).first) or !h.doctorExists(named)) cout << "  error" << endl;
           else{
             
           }
