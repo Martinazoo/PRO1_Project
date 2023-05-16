@@ -113,7 +113,7 @@ public:
 	   implícit amb aquest valor, altrament conté un
 	   element buit */
 	pair<bool, T> find(const T& d) const;
-	void find_aux(Item* r, const T& d, bool &trobat);
+	void find_aux(Item* r, const T& d, bool &trobat); //posar al privat
 
 };
 
