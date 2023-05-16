@@ -3,6 +3,7 @@
 #include "Doctor.hpp"
 #include "PriorityQueue.hpp"
 #include "BST.hpp"
+#include "Visita.hpp"
 
 using namespace std; 
 
@@ -37,11 +38,12 @@ class Hospital {
         /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
         pair<bool, Pacient> pacientExists (const Pacient &p)const;
         bool doctorExists (Doctor d) const;
-        void printPacients ()const;
+        void printPacients (Queue<Pacient> &pacients)const;
         //Modificadors
         /* Pre: una llista de Pacient pacients , i un Pacient p */
         /* Post: afegeix un Pacient al final de la llista */
         void addPacient (Pacient &p);
         void addDoctor(Doctor &d);
+        void baixa_pacient(string &s);
 };
 #endif
