@@ -110,6 +110,6 @@ void BST<T>::setValue(const T& d, const T& value) {
 template <typename T> /* Retorna un boolea i un value */
 pair<bool, T> BST<T>::find(const T& d) const { 
 	
-	// PROGRAM THIS METHOD
+	
 	
 }
