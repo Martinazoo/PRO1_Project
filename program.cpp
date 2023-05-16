@@ -59,7 +59,7 @@ int main() {
           string namep, named;
           Data d;
           cin >> namep >> named >> d;
-          if(!h.pacientExists(namep) or !h.doctorExists(named)) cout << "  error" << endl;
+          if(!(h.pacientExists(namep)) or !h.doctorExists(named)) cout << "  error" << endl;
           else{
             
           }
