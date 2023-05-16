@@ -38,5 +38,6 @@ class Doctor {
 
         friend istream& operator>>(istream &is, Doctor &d);
         list<Visita> addvisita (Pacient p, Data d);
+        void baixa_pacient (string &s);
 };
 #endif

@@ -28,11 +28,10 @@
     /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
     pair<bool,Pacient> Hospital::pacientExists (const Pacient &p)const //Aixo haura de ser un pair
     {
-        pair<bool,Pacient> pairpacient(true, p);
+        pair<bool,Pacient> pairpacient(false, p);
         if(bstpacient.find(p).first == true){
             pairpacient.first = true;
             pairpacient.second = p;
-            return pairpacient;
         } 
         /* list<Pacient>::const_iterator it = pacients.begin();
         while (it != pacients.end()) {
@@ -74,17 +73,8 @@
         return true;
     }
 
-    void Hospital::printPacients()const{
-        /*
-        list<Pacient>::const_iterator it = pacients.begin();
-        bool espai = false;
-        while (it != pacients.end()){
-            if (espai) cout << " ";
-            cout << pacients.front();
-            it++;
-        }
-        cout << endl;
-        */
+    void Hospital::printPacients(Queue<Pacient> &pacients)const{
+        cout << pacients << endl; 
     }
     //Modificadors
     /* Pre: una llista de Pacient pacients , i un Pacient p */
@@ -98,4 +88,16 @@
     void Hospital::addDoctor(Doctor &d)
     {
         doctors.push_back(d);
+    }
+    void Hospital::baixa_pacient(string &s){
+        pacients.remove(s);
+        bstpacient.remove(s);
+
+        //buscar el pacient dintre de la llista de doctors-> dintre de visites-> dintre de pacients
+        /*list<Doctor>::iterator it = doctors.begin();
+        bool trobat = false;
+        while(it != doctors.end() and not trobat){
+            it->visites.front().getPacient().getNom();
+        }
+        */
     }

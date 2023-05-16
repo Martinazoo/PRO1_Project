@@ -16,6 +16,7 @@ using namespace std;
 int main() {
 	// Crear un hospital
 	Hospital h;
+  
 	// Processar instruccions
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
@@ -36,7 +37,7 @@ int main() {
           cin >> name;
           if (not h.pacientExists(name).first) cout << "  error" << endl;
           else {
-            
+            h.baixa_pacient(name);
           }
 
         } else if (inst == "alta_doctor") {
@@ -48,7 +49,9 @@ int main() {
           }
 
         } else if (inst == "llista_espera"){
-          h.printPacients();
+          Queue<Pacient> paci;
+          paci = h.getPacients();
+          h.printPacients(paci);
         } else if (inst == "tractar_seguent_pacient"){
           /* code */
         } else if (inst == "modificar_estat_pacient"){
@@ -84,32 +87,3 @@ int main() {
 
 	
 
-
-#include <iostream>
-#include "Hospital.hpp"
-#include "PriorityQueue.hpp"
-#include "BST.hpp"
-using namespace std;
-
-/** Programa principal
- *
- * main() crea l'hospital, fa la lectura d'instruccions i
- * l'escriptura de resultats. Les operacions estan definides i
- * implementades en les classes Hospital, Pacient, Doctor, Visita,
-   Data, PriorityQueue i BST
- */
-
-int main() {
-
-  BST<int> bst;
-  bst.insert(5);
-  bst.insert(7);
-  bst.insert(22);
-  bst.insert(3);
-  bst.insert(10);
-  bst.insert(2);
-
-  cout << bst.find(-2).first << " " << bst.find(-2).second << endl;
-
-
-}

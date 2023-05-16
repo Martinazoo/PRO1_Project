@@ -31,3 +31,14 @@
          list<Visita> a;
          return a;   
     }
+    void Doctor::baixa_pacient (string &s){
+        list<Visita>::iterator it = visites.begin();
+        bool trobat = false;
+        while(it != visites.end() and not trobat){
+            if(s == it->getPacient().getNom()){
+                trobat = true;
+                visites.erase(it);
+            }
+            it++;
+        }
+    }
