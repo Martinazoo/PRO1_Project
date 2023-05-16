@@ -35,7 +35,7 @@ class Hospital {
         list<Doctor> getDoctors();
         /* Pre: un nom d'un pacient */
         /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
-        pair<bool, Pacient> pacientExists (Pacient p)const;
+        pair<bool, Pacient> pacientExists (const Pacient &p)const;
         bool doctorExists (Doctor d) const;
         void printPacients ()const;
         //Modificadors

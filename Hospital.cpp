@@ -26,9 +26,9 @@
     }
     /* Pre: un nom d'un pacient */
     /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
-    pair<bool,Pacient> Hospital::pacientExists (Pacient p)const //Aixo haura de ser un pair
+    pair<bool,Pacient> Hospital::pacientExists (const Pacient &p)const //Aixo haura de ser un pair
     {
-        pair<bool,Pacient> pairpacient;
+        pair<bool,Pacient> pairpacient(true, p);
         if(bstpacient.find(p).first == true){
             pairpacient.first = true;
             pairpacient.second = p;
@@ -54,7 +54,7 @@
         }
         return true; 
         canviar aquesta cerca per mitja de la cerca d'arbres */
-        
+        return pairpacient;
     }
 
     bool Hospital::doctorExists(Doctor d) const 
@@ -67,7 +67,7 @@
             if(cond1 and cond2) return true;
             */
             if(d.getName() != it->getName()){
-                if(d.getList() != it->getList()) return false;
+                //if(d.getList() != it->getList()) return false;
             }
             ++it;
         }

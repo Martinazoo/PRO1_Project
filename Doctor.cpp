@@ -27,5 +27,7 @@
 			return is;
 		}
     list<Visita> Doctor::addvisita(Pacient p, Data d){
-        
+         cout << p << d << endl;
+         list<Visita> a;
+         return a;   
     }

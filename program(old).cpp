@@ -14,5 +14,15 @@ using namespace std;
 
 int main() {
 
+  BST<int> bst;
+  bst.insert(5);
+  bst.insert(7);
+  bst.insert(22);
+  bst.insert(3);
+  bst.insert(10);
+  bst.insert(2);
+
+  cout << bst.find(22).first << " " << bst.find(22).second << endl;
+
 
 }
