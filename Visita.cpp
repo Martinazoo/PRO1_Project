@@ -4,7 +4,10 @@
 // Constructors
 //-------------
 
-Visita::Visita(const Data &data, const Pacient &pacient) {
+/* Pre: cert */
+/* Post: crea una visita de data 'd' i pacient 'p' */
+Visita::Visita(const Data &data, const Pacient &pacient) 
+{
     this->data = data;
     this->pacient = pacient;
 }
@@ -13,10 +16,16 @@ Visita::Visita(const Data &data, const Pacient &pacient) {
 // Consultors
 //-----------
 
-Data Visita::getData() const {
+/* Pre: cert */
+/* Post: retorna la data de la visita paràmetre implícit */
+Data Visita::getData() const 
+{
     return data;
 }
 
-Pacient Visita::getPacient() const {
+/* Pre: cert */
+/* Post: retorna el pacient de la visita paràmetre implícit */
+Pacient Visita::getPacient() const 
+{
     return pacient;
 }
