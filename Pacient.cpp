@@ -83,6 +83,27 @@
 			if(this->gravetat == p.gravetat) return true;
 			else return false;
 		}
+		
+		/* Pre: cert */
+		/* Post: retorna un booleà que indica si el nom del Pacient del paràmetre
+		   implícit i el nom del Pacient 'p' rebut són identics (true)
+		   o no ho són (false) */
+		bool Pacient::operator==(const Pacient &p)const{
+			if(this->nom == p.getNom()){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		/* Pre: cert */
+		/* Post: retorna un booleà que indica si el nom del pacient del paràmetre
+		   implícit és més petit al nom del Pacient p rebut (true) o
+		   no ho és (false) */
+		bool Pacient::operator< (const Pacient &p)const { 
+			return this->nom < p.getNom();
+		}
 
 
 		// PODEU AFEGIR ELS MÈTODES QUE NECESSITEU
@@ -110,23 +131,4 @@
 			return os; 
 		}
 
-		/* Pre: cert */
-		/* Post: retorna un booleà que indica si el nom del Pacient del paràmetre
-		   implícit i el nom del Pacient 'p' rebut són identics (true)
-		   o no ho són (false) */
-		bool Pacient::operator==(const Pacient &p)const{
-			if(this->nom == p.getNom()){
-				return true;
-			}
-			else {
-				return false;
-			}
-		}
-
-		/* Pre: cert */
-		/* Post: retorna un booleà que indica si el nom del pacient del paràmetre
-		   implícit és més petit al nom del Pacient p rebut (true) o
-		   no ho és (false) */
-		bool Pacient::operator< (const Pacient &p)const { 
-			return this->nom < p.getNom();
-		}
+		
