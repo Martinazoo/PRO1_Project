@@ -94,8 +94,17 @@ class Pacient {
 		/* Post: s'han escrit els atributs nom, edat, motiu i gravetat del
            pacient 'p' al canal estàndard de sortida */
 		friend ostream& operator<<(ostream &os, const Pacient &p); 
-
+		
+		/* Pre: cert */
+		/* Post: retorna un booleà que indica si el nom del Pacient del paràmetre
+		   implícit i el nom del Pacient 'p' rebut són identics (true)
+		   o no ho són (false) */
 		bool operator== (const Pacient &p)const;
+
+		/* Pre: cert */
+		/* Post: retorna un booleà que indica si el nom del pacient del paràmetre
+		   implícit és més petit al nom del Pacient p rebut (true) o
+		   no ho és (false) */
 		bool operator< (const Pacient &p)const;
 };
 #endif
