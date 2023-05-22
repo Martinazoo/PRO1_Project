@@ -53,9 +53,10 @@ int main() {
           Queue<Pacient> paci;
           paci = h.getPacients();
           h.printPacients(paci);
+
         } else if (inst == "tractar_seguent_pacient"){
           cout << "tractar_seguent_pacient" << endl;
-          h.getPacients().pop();
+          h.pop_pacients();
         } else if (inst == "modificar_estat_pacient"){
           string name;
           int grav;

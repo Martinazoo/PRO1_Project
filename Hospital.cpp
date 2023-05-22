@@ -1,5 +1,6 @@
 #include "Hospital.hpp"
-
+#include <stack>
+#include <queue>
     //-------------
 	// Constructors
 	//-------------
@@ -56,7 +57,7 @@
         if (!pacients.empty())
             printPacients(pacients);
         
-        cout << " " << p << endl;
+        cout << "  "<< p << endl;
         
         
 
@@ -91,4 +92,18 @@
         p.actualitzaEstat(grav); 
         pacients.remove(p.getNom());
         pacients.push(p);
+    }
+    void Hospital::pop_pacients(){
+        Queue<Pacient> aux = pacients;
+        stack<Pacient> aux1;
+
+        while(!aux.empty()){
+            aux1.push(aux.front());
+            aux.pop();
+        }
+        while(!aux1.empty()){
+            pacients.remove(aux1.top());
+            aux1.pop();
+        }
+        
     }

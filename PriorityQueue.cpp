@@ -114,8 +114,8 @@ void Queue<T>::remove(T value) {
 	if(pfirst != NULL){
 		Item *pseg = first->next;
 		
-		while(pfirst != NULL and not trobat){
-			if(pfirst->value == value){
+		while(pseg!= NULL and not trobat){
+			if(pseg->value == value){
 				trobat = true;
 				pfirst ->next = pseg->next;
 				delete pseg;
