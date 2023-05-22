@@ -94,6 +94,5 @@
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
-        cout << pacients.back() << endl;
         pacients.remove(pacients.back());
     }

@@ -108,29 +108,30 @@ void Queue<T>::push(T value) {
 
 template <typename T>
 void Queue<T>::remove(T value) {
-	Item *pfirst = first;
-	bool trobat = false;
+	if (first == NULL) {
+		exit(1);
+	}
 
-	if(pfirst != NULL){
-		Item *pseg = first->next;
-		
-		while(pseg!= NULL and not trobat){
-			if(pseg->value == value){
-				trobat = true;
-				pfirst ->next = pseg->next;
+	Item* pfirst = first;
+	if (pfirst->value == value){ ///FALTA POSAR EL LAST!!!!!!!!!!!!!!!!!
+		delete first;
+		first = pfirst->next;
+	} else {
+		Item* pseg = pfirst->next;
+		bool trobat = false;
+		while (pseg != NULL and !trobat){
+			if (pseg->value == value){
+				if (pseg->next == NULL) last = pfirst;
+				pfirst->next = pseg->next;
 				delete pseg;
-				_size--;
-			}
-			else{
-				pfirst = pfirst->next;
+				trobat = true;
+			} else {
+				pfirst = pseg;
 				pseg = pseg->next;
 			}
 		}
+		
 	}
-
-	
-
-
 }
 /*
 template <typename T>

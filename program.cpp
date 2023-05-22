@@ -49,13 +49,13 @@ int main() {
           }
 
         } else if (inst == "llista_espera"){
-          cout << "llista_espera" << endl;
+          cout << inst << endl;
           Queue<Pacient> paci;
           paci = h.getPacients();
           h.printPacients(paci);
 
         } else if (inst == "tractar_seguent_pacient"){
-          cout << "tractar_seguent_pacient" << endl;
+          cout << inst << endl;
           h.pop_pacients();
         } else if (inst == "modificar_estat_pacient"){
           string name;
@@ -63,9 +63,10 @@ int main() {
           cin >> name >> grav ;
           if(not h.pacientExists(name).first or not h.grav_range(grav)){
             cout << " error" << endl;
-          }
-          else {
+          }else {
             h.modify_estat_pacient(h.pacientExists(name).second, grav);
+            cout << inst << " " << name << " " << grav << endl;
+
           }
         } else if (inst == "programar_visita"){
           string namep, named;
@@ -82,6 +83,7 @@ int main() {
           /* code */
         }
         else {
+          cout << inst << endl;
           cout << "  error" << endl; 
         }
         
