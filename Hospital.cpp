@@ -33,44 +33,21 @@
             pairpacient.first = true;
             pairpacient.second = p;
         } 
-        /* list<Pacient>::const_iterator it = pacients.begin();
-        while (it != pacients.end()) {
-            
-            bool cond1 = p.getNom() == it->getNom();
-            bool cond2 = p.getEdat() == it->getEdat();
-            bool cond3 = p.getMotiu() == it->getMotiu();
-            bool cond4 = p.getGravetat() == it->getGravetat();
-            if (cond1 and cond2 and cond3 and cond4) return true;
-            
-            if(p.getNom() != it->getNom()){
-                if(p.getEdat() != it->getEdat()){
-                    if(p.getMotiu() != it->getMotiu()){
-                        if(p.getGravetat() == it->getGravetat()) return false;
-                    }
-                }
-            }
-            ++it;
-        }
-        return true; 
-        canviar aquesta cerca per mitja de la cerca d'arbres */
         return pairpacient;
+    }
+    bool Hospital::grav_range (const int &grav)const{
+        return ((grav <= 3) or (grav >= 1));
     }
 
     bool Hospital::doctorExists(Doctor d) const 
     {
         list<Doctor>::const_iterator it = doctors.begin();
         while(it != doctors.end()){
-            /*
-            bool cond1 = d.getName() == it->getName();
-            bool cond2 = d.getList() == it->getList();
-            if(cond1 and cond2) return true;
-            */
-            if(d.getName() != it->getName()){
-                //if(d.getList() != it->getList()) return false;
-            }
+            if(d.getName() == it->getName())
+                return true;
             ++it;
         }
-        return true;
+        return false;
     }
 
     void Hospital::printPacients(Queue<Pacient> &pacients)const{
@@ -100,4 +77,9 @@
             it->visites.front().getPacient().getNom();
         }
         */
+    }
+    void Hospital::modify_estat_pacient (Pacient p, int grav){
+        p.actualitzaEstat(grav); 
+        pacients.remove(p.getNom());
+        pacients.push(p);
     }
