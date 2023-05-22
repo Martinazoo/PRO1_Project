@@ -95,6 +95,12 @@ public:
 	   del paràmetre implícit */
 	T front() const;
 
+
+    /* Pre: el paràmetre implícit no és buit */
+    /* Post: el resultat és l'ultim element 
+	   del paràmetre implícit */
+	T back() const;
+
     /* Pre: cert */
     /* Post: el resultat és el nombre d'elements
 	   del paràmetre implícit */  

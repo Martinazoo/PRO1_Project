@@ -154,6 +154,15 @@ T Queue<T>::front() const {
 }	
 
 template <typename T>
+T Queue<T>::back() const{
+	if (last == NULL) {
+	cerr << "Error: front on empty queue" << endl;
+	exit(0);
+	}
+	return last->value;
+}
+
+template <typename T>
 int Queue<T>::size() const {
 	return _size;
 }

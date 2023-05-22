@@ -94,16 +94,6 @@
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
-        Queue<Pacient> aux = pacients;
-        stack<Pacient> aux1;
-
-        while(!aux.empty()){
-            aux1.push(aux.front());
-            aux.pop();
-        }
-        while(!aux1.empty()){
-            pacients.remove(aux1.top());
-            aux1.pop();
-        }
-        
+        cout << pacients.back() << endl;
+        pacients.remove(pacients.back());
     }
