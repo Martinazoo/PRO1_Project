@@ -37,7 +37,10 @@ class Doctor {
         list<Visita> getList() const;
 
         friend istream& operator>>(istream &is, Doctor &d);
+        friend ostream& operator<<(ostream &os, const Doctor &d);
         list<Visita> addvisita (Pacient p, Data d);
         void baixa_pacient (string &s);
+
+
 };
 #endif

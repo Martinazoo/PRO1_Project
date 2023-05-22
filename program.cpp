@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Hospital.hpp"
 #include "PriorityQueue.hpp"
@@ -43,6 +42,7 @@ int main() {
         } else if (inst == "alta_doctor") {
           Doctor d; 
           cin >> d;
+          cout << "alta_doctor " << d << endl;
           if(h.doctorExists(d)) cout << "  error" << endl;
           else {
             h.addDoctor(d);
@@ -53,12 +53,18 @@ int main() {
           paci = h.getPacients();
           h.printPacients(paci);
         } else if (inst == "tractar_seguent_pacient"){
-          /* code */
+          cout << "tractar_seguent_pacient" << endl;
+          h.getPacients().pop();
         } else if (inst == "modificar_estat_pacient"){
           string name;
-          cin >> name ;
-          //if(h.pacientExists()) h.getPacients(). //pair amb iterator?? o com sabem en quina posicio de la llista esta el pacient
-          //despres fem un actualitzar estat del pacient
+          int grav;
+          cin >> name >> grav ;
+          if(not h.pacientExists(name).first or not h.grav_range(grav)){
+            cout << " error" << endl;
+          }
+          else {
+            h.modify_estat_pacient(h.pacientExists(name).second, grav);
+          }
         } else if (inst == "programar_visita"){
           string namep, named;
           Data d;

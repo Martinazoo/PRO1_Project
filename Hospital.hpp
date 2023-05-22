@@ -13,9 +13,9 @@ class Hospital {
     d’urg`encies format pel conjunt de pacients, el conjunt de doctors i la llista d’espera, i
     oferir els m`etodes necessaris per poder-hi operar  */
         Queue<Pacient> pacients; //print queue fer una copia de la cua i buidarla
-        //list<Pacient> regpacient;
         BST<Pacient> bstpacient;
         list<Doctor> doctors;
+        //BST<Doctor> bstdoctor;
         
 
     public:
@@ -37,6 +37,7 @@ class Hospital {
         /* Pre: un nom d'un pacient */
         /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
         pair<bool, Pacient> pacientExists (const Pacient &p)const;
+        bool grav_range (const int &grav)const;
         bool doctorExists (Doctor d) const;
         void printPacients (Queue<Pacient> &pacients)const;
         //Modificadors
@@ -45,5 +46,6 @@ class Hospital {
         void addPacient (Pacient &p);
         void addDoctor(Doctor &d);
         void baixa_pacient(string &s);
+        void modify_estat_pacient (Pacient p, int grav); 
 };
 #endif

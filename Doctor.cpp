@@ -26,6 +26,10 @@
 			is >> d.nom;
 			return is;
 		}
+    
+    ostream& operator<<(ostream &os, const Doctor &d){
+        return os << d.nom;
+    }
     list<Visita> Doctor::addvisita(Pacient p, Data d){
          cout << p << d << endl;
          list<Visita> a;

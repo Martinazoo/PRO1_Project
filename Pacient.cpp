@@ -101,10 +101,17 @@
 		/* Post: retorna un booleà que indica si el nom del pacient del paràmetre
 		   implícit és més petit al nom del Pacient p rebut (true) o
 		   no ho és (false) */
-		bool Pacient::operator< (const Pacient &p)const { 
+		bool Pacient::operator< (const Pacient &p)const{ 
 			return this->nom < p.getNom();
 		}
 
+		/* Pre: cert */
+		/* Post: retorna un booleà que indica si el nom del pacient del paràmetre
+		   implícit és més gran al nom del Pacient p rebut (true) o
+		   no ho és (false) */
+		bool Pacient::operator> (const Pacient &p)const{
+			return this->nom > p.getNom();
+		}
 
 		// PODEU AFEGIR ELS MÈTODES QUE NECESSITEU
 		
