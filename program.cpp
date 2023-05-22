@@ -49,6 +49,7 @@ int main() {
           }
 
         } else if (inst == "llista_espera"){
+          cout << "llista_espera" << endl;
           Queue<Pacient> paci;
           paci = h.getPacients();
           h.printPacients(paci);
