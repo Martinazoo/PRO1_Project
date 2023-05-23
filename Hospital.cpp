@@ -15,18 +15,21 @@
     //Consultors
         
     /* Pre: cert */
-    /* Post: retorna una llista de Pacient */
+    /* Post: retorna la cua de pacients del privat */
     Queue<Pacient> Hospital::getPacients()
     {
         return pacients;
     }
     
+    /* Pre: cert */
+    /* Post: retorna la llista de doctors del privat */
     list<Doctor> Hospital::getDoctors()
     {
         return this->doctors;
     }
+
     /* Pre: un nom d'un pacient */
-    /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
+    /* Post: retorna un pair, un dels elements del pair es un boolea d'existència del pacient p, i l'altre el Pacient p en questió */
     pair<bool,Pacient> Hospital::pacientExists (const Pacient &p)const //Aixo haura de ser un pair
     {
         pair<bool,Pacient> pairpacient(false, p);
@@ -36,10 +39,16 @@
         } 
         return pairpacient;
     }
+
+    /* Pre: un int de gravetat */
+    /* Post: retorna true en cas de que el nombre de gravetat sigui correcte, fals en cas contrari */
     bool Hospital::grav_range (const int &grav)const{
-        return ((grav <= 3) or (grav >= 1));
+        return ((grav <= 3) and (grav >= 1));
     }
 
+
+    /* Pre: un Doctor d */
+    /* Post: retorna un boole (true) en cas de que el Doctor ja existeix, (false) en cas contrari */
     bool Hospital::doctorExists(Doctor d) const 
     {
         list<Doctor>::const_iterator it = doctors.begin();
@@ -50,7 +59,7 @@
         }
         return false;
     }
-
+    
     void Hospital::printPacients(Queue<Pacient> &pacients)const{
         Pacient p = pacients.front();
             pacients.pop();
