@@ -96,9 +96,11 @@
 
     }
     void Hospital::modify_estat_pacient (string &s, int grav){
-        Pacient p = bstpacient.find(s).second;
+        Pacient p = get_Pacient(s);
+        cout << p << endl; 
         pacients.remove(p);
         p.actualitzaEstat(grav); 
+        cout << p << endl; 
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
