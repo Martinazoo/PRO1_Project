@@ -46,7 +46,9 @@ class Hospital {
         void addPacient (Pacient &p);
         void addDoctor(Doctor &d);
         void baixa_pacient(string &s);
-        void modify_estat_pacient (Pacient p, int grav); 
+        void modify_estat_pacient (string &s, int grav); 
         void pop_pacients();
+        Pacient get_Pacient(string &s);
+        void mostrar_programacio_visites();
 };
 #endif

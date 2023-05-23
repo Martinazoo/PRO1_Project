@@ -82,14 +82,11 @@
     void Hospital::baixa_pacient(string &s){
         pacients.remove(s);
         bstpacient.remove(s);
-
-        //FER ULTIM CHEQUEIG comprovar que funcioni bé
         list<Doctor>::iterator it = doctors.begin();
-        bool trobat = false;
-        while(it != doctors.end() and not trobat){
+        while(it != doctors.end()){
             list<Visita>::iterator it1 = it->getList().begin();
-            while(it1 != it->getList().end() and not trobat){
-                if(it1->getPacient().getNom() == s) trobat = true;
+            while(it1 != it->getList().end()){
+                if(it1->getPacient().getNom() == s) it1 = it->getList().erase(it1);
                 else {
                     it1++;
                 }
@@ -98,11 +95,28 @@
         }
 
     }
-    void Hospital::modify_estat_pacient (Pacient p, int grav){
+    void Hospital::modify_estat_pacient (string &s, int grav){
+        Pacient p = bstpacient.find(s).second;
+        pacients.remove(p);
         p.actualitzaEstat(grav); 
-        pacients.remove(p.getNom());
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
         pacients.pop();
+    }
+    Pacient Hospital::get_Pacient(string &s){
+        return bstpacient.find(s).second;
+       
+    }
+    void Hospital::mostrar_programacio_visites(){
+        list<Doctor>::iterator it = doctors.begin();
+        while(it != doctors.end()){
+            cout << it->getName() << endl;
+            list<Visita>::iterator it1 = it->getList().begin();
+            while(it1 != it->getList().end()){
+                cout << "  "<< it1->getData() << " " << it1->getPacient() << endl;
+                ++it1;
+            }
+            ++it;
+        }
     }

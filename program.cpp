@@ -34,6 +34,7 @@ int main() {
         } else if (inst == "baixa_pacient") {
           string name;
           cin >> name;
+          cout << inst << " " << name << endl; 
           if (not h.pacientExists(name).first) cout << "  error" << endl;
           else {
             h.baixa_pacient(name);
@@ -64,7 +65,7 @@ int main() {
           if(not h.pacientExists(name).first or not h.grav_range(grav)){
             cout << " error" << endl;
           }else {
-            h.modify_estat_pacient(h.pacientExists(name).second, grav);
+            h.modify_estat_pacient(name, grav);
             cout << inst << " " << name << " " << grav << endl;
 
           }
@@ -78,9 +79,14 @@ int main() {
           }
 
         } else if (inst == "cancellar_visita"){
-          /* code */
+          string user;
+          Doctor doctor;
+          Data day;
+          cin >> user >> doctor >> day;
+          cout << inst << " " << doctor << " " << day;
         } else if (inst == "mostrar_programacio_visites"){
-          /* code */
+          cout << inst << " " << endl;
+          h.mostrar_programacio_visites();
         }
         else {
           cout << inst << endl;
