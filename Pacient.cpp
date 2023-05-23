@@ -80,7 +80,7 @@
 		   del pacient paràmetre implícit i el del pacient 'p' són
 		   identics (true) o no ho són (false) */
 		bool Pacient::compare(const Pacient &p) const{
-			if(this->gravetat == p.gravetat) return true;
+			if(this->gravetat < p.gravetat) return true;
 			else return false;
 		}
 		

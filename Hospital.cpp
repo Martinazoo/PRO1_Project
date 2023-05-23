@@ -61,13 +61,10 @@
     }
     
     void Hospital::printPacients(Queue<Pacient> &pacients)const{
-        Pacient p = pacients.front();
-            pacients.pop();
+        cout << "  "<< pacients.front() << endl;
+        pacients.pop();
         if (!pacients.empty())
             printPacients(pacients);
-        
-        cout << "  "<< p << endl;
-        //cout << pacients << "a" << endl; 
     }
     //Modificadors
     /* Pre: una llista de Pacient pacients , i un Pacient p */
@@ -107,5 +104,5 @@
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
-        pacients.remove(pacients.back());
+        pacients.pop();
     }

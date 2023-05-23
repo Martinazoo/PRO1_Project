@@ -43,10 +43,10 @@ llista_espera
   Alice_Brown  30 mal_de_panxa 3
 modificar_estat_pacient Mary_Williams 4
 llista_espera
-  Mary_Williams  0  4
   John_Doe  35 febre 3
   Jane_Smith  4 mal_de_cap 3
   Alice_Brown  30 mal_de_panxa 3
+  Mary_Williams  0  4
 Alice_Brown
   error
 Dr_Smith
@@ -58,17 +58,17 @@ Dr_Smith
 2023
   error
 llista_espera
-  Mary_Williams  0  4
   John_Doe  35 febre 3
   Jane_Smith  4 mal_de_cap 3
   Alice_Brown  30 mal_de_panxa 3
-llista_espera
   Mary_Williams  0  4
+llista_espera
   Jane_Smith  4 mal_de_cap 3
   Alice_Brown  30 mal_de_panxa 3
-llista_espera
   Mary_Williams  0  4
+llista_espera
   Jane_Smith  4 mal_de_cap 3
+  Mary_Williams  0  4
 Alice_Brown
   error
 Dr_Smith
