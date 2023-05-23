@@ -50,5 +50,6 @@ class Hospital {
         void pop_pacients();
         Pacient get_Pacient(string &s);
         void mostrar_programacio_visites();
+        void cancellar_visita(string &u, string &d, Data &date);
 };
 #endif

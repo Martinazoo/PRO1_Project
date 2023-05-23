@@ -120,3 +120,25 @@
             ++it;
         }
     }
+    void Hospital::cancellar_visita(string &u, string &d, Data &date){
+        if(not doctorExists(d) and not pacientExists(u).first){
+            cout << " error" << endl;
+        }
+        else {
+            list<Doctor>::iterator it = doctors.begin();
+            bool find = false;
+            while(it != doctors.end() and not find){
+                if(it->getName() == d){
+                    list<Visita>::iterator it1 = it->getList().begin();
+                    while(it1 != it->getList().end()){
+                        if(it1->getPacient().getNom() == u and it1->getData() == date){
+                            find = true;
+                            it->getList().erase(it1);
+                        }
+                        it1++;
+                    }
+                }
+                it++;
+            }
+        }
+    }

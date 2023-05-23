@@ -62,7 +62,7 @@ int main() {
           string name;
           int grav;
           cin >> name >> grav ;
-          if(not h.pacientExists(name).first or not h.grav_range(grav)){
+          if(not h.pacientExists(name).first and not h.grav_range(grav)){
             cout << " error" << endl;
           }else {
             h.modify_estat_pacient(name, grav);
@@ -80,10 +80,12 @@ int main() {
 
         } else if (inst == "cancellar_visita"){
           string user;
-          Doctor doctor;
+          string doctor;
           Data day;
           cin >> user >> doctor >> day;
           cout << inst << " " << doctor << " " << day;
+          h.cancellar_visita(user, doctor, day);
+          
         } else if (inst == "mostrar_programacio_visites"){
           cout << inst << " " << endl;
           h.mostrar_programacio_visites();
