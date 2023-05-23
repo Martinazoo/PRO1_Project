@@ -39,7 +39,7 @@ int main() {
             h.baixa_pacient(name);
           }
 
-        } else if (inst == "alta_doctor") {
+        } else if (inst == "alta_doctor") { //comparar gravetat valida
           Doctor d; 
           cin >> d;
           cout << "alta_doctor " << d << endl;

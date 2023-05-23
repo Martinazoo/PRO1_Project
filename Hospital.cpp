@@ -58,9 +58,6 @@
             printPacients(pacients);
         
         cout << "  "<< p << endl;
-        
-        
-
         //cout << pacients << "a" << endl; 
     }
     //Modificadors
