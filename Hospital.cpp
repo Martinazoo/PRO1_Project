@@ -86,13 +86,20 @@
         pacients.remove(s);
         bstpacient.remove(s);
 
-        //buscar el pacient dintre de la llista de doctors-> dintre de visites-> dintre de pacients
-        /*list<Doctor>::iterator it = doctors.begin();
+        //FER ULTIM CHEQUEIG comprovar que funcioni bé
+        list<Doctor>::iterator it = doctors.begin();
         bool trobat = false;
         while(it != doctors.end() and not trobat){
-            it->visites.front().getPacient().getNom();
+            list<Visita>::iterator it1 = it->getList().begin();
+            while(it1 != it->getList().end() and not trobat){
+                if(it1->getPacient().getNom() == s) trobat = true;
+                else {
+                    it1++;
+                }
+            }
+            it++;
         }
-        */
+
     }
     void Hospital::modify_estat_pacient (Pacient p, int grav){
         p.actualitzaEstat(grav); 
