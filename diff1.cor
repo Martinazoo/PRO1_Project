@@ -35,21 +35,9 @@ llista_espera
   Mary_Williams  25 encostipat 3
 llista
   error
-Mary_Williams  -1783778856  15
-Mary_Williams  -1783778856  2
 modificar_estat_pacient Mary_Williams 2
 llista_espera
-  Mary_Williams  -1783778856  2
+  Mary_Williams  25 encostipat 2
   John_Doe  35 febre 3
   Jane_Smith  4 mal_de_cap 3
   Alice_Brown  30 mal_de_panxa 3
-Mary_Williams  -1783778856  15
-Mary_Williams  -1783778856  4
-modificar_estat_pacient Mary_Williams 4
-llista_espera
-  John_Doe  35 febre 3
-  Jane_Smith  4 mal_de_cap 3
-  Alice_Brown  30 mal_de_panxa 3
-  Mary_Williams  -1783778856  4
-mostrar_programacio_visites 
-Dr_Smith

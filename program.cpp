@@ -61,11 +61,13 @@ int main() {
         } else if (inst == "modificar_estat_pacient"){
           string name;
           int grav;
-          cin >> name >> grav ;
-          if(not h.pacientExists(name).first and not h.grav_range(grav)){
+          cin >> name >> grav; 
+          Pacient p(name);
+          p = h.getBstPacients().find(p).second;
+          if((h.pacientExists(p).first == 0) and (h.grav_range(grav) == 0)){
             cout << " error" << endl;
           }else {
-            h.modify_estat_pacient(name, grav);
+            h.modify_estat_pacient(p, grav);
             cout << inst << " " << name << " " << grav << endl;
 
           }

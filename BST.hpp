@@ -62,7 +62,7 @@ private:
 	void setValue(Item *node, const T& d, const T& newData);
 	
 
-	void find_aux(Item* r, const T& d, bool &trobat) const; //posar al privat
+	void find_aux(Item* r, T& d, bool &trobat) const; //posar al privat
 
 
 public:

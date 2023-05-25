@@ -13,7 +13,9 @@
     }
 
     //Consultors
-        
+    BST <Pacient> Hospital::getBstPacients(){
+        return bstpacient;
+    }    
     /* Pre: cert */
     /* Post: retorna la cua de pacients del privat */
     Queue<Pacient> Hospital::getPacients()
@@ -43,7 +45,8 @@
     /* Pre: un int de gravetat */
     /* Post: retorna true en cas de que el nombre de gravetat sigui correcte, fals en cas contrari */
     bool Hospital::grav_range (const int &grav)const{
-        return ((grav <= 3) and (grav >= 1));
+        if ( grav >= 1 and grav <= 3) return true;
+        return false;    
     }
 
 
@@ -61,6 +64,7 @@
     }
     
     void Hospital::printPacients(Queue<Pacient> &pacients)const{
+
         cout << "  "<< pacients.front() << endl;
         pacients.pop();
         if (!pacients.empty())
@@ -95,19 +99,20 @@
         }
 
     }
-    void Hospital::modify_estat_pacient (string &s, int grav){
-        Pacient p = get_Pacient(s);
-        cout << p << endl; 
+    void Hospital::modify_estat_pacient (Pacient &p, int grav){ 
+        bstpacient.find(p).second;
         pacients.remove(p);
-        p.actualitzaEstat(grav); 
-        cout << p << endl; 
+        p.actualitzaEstat(grav);  
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
         pacients.pop();
     }
     Pacient Hospital::get_Pacient(string &s){
-        return bstpacient.find(s).second;
+        Pacient ss = bstpacient.find(s).second;
+        cout << bstpacient.find(s).first << endl;
+        cout << ss.getGravetat() << endl;
+        return ss;
        
     }
     void Hospital::mostrar_programacio_visites(){

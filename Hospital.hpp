@@ -32,7 +32,7 @@ class Hospital {
         /* Pre: cert */
         /* Post: retorna una llista de Pacient */
         Queue<Pacient> getPacients();
-
+        BST<Pacient> getBstPacients();
         list<Doctor> getDoctors();
         /* Pre: un nom d'un pacient */
         /* Post: retorna true en cas de que existeixi l'usuari, false en cas contrari*/
@@ -46,7 +46,7 @@ class Hospital {
         void addPacient (Pacient &p);
         void addDoctor(Doctor &d);
         void baixa_pacient(string &s);
-        void modify_estat_pacient (string &s, int grav); 
+        void modify_estat_pacient (Pacient &p, int grav); 
         void pop_pacients();
         Pacient get_Pacient(string &s);
         void mostrar_programacio_visites();
