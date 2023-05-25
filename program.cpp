@@ -62,22 +62,24 @@ int main() {
           string name;
           int grav;
           cin >> name >> grav; 
-          Pacient p(name);
-          p = h.getBstPacients().find(p).second;
-          if((h.pacientExists(p).first == 0) and (h.grav_range(grav) == 0)){
-            cout << " error" << endl;
+          Pacient p = h.nametoPacient(name);
+          cout << inst << " " << name << " " << grav << endl;
+          if((h.pacientExists(p).first == 0) or (h.grav_range(grav) == 0)){
+            cout << "  error" << endl;
           }else {
+            
             h.modify_estat_pacient(p, grav);
-            cout << inst << " " << name << " " << grav << endl;
 
           }
         } else if (inst == "programar_visita"){
-          string namep, named;
-          Data d;
-          cin >> namep >> named >> d;
-          if(!(h.pacientExists(namep).first) or !h.doctorExists(named)) cout << "  error" << endl;
+          string namep;
+          Doctor d;
+          Data date;
+          cin >> namep >> d >> date;
+          Pacient p = h.nametoPacient(namep);
+          if((h.pacientExists(namep).first == 0) or (h.doctorExists(d) == 0)) cout << "  error" << endl;
           else{
-            
+            h.programar_visita(p, d, date);
           }
 
         } else if (inst == "cancellar_visita"){

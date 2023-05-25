@@ -149,3 +149,27 @@
             }
         }
     }
+
+    Pacient Hospital::nametoPacient (string const &s){
+        Pacient p(s);
+        p = bstpacient.find(p).second;
+        return p;
+    }
+    void Hospital::programar_visita(const Pacient &p, const Doctor &d, const Data &date){
+        list<Doctor>::const_iterator it = doctors.begin();
+        bool find = false;
+        while (it != doctors.end() and not find){
+            if(it->getName() == d.getName()){
+                list<Visita> visites = it->getList();
+                list<Visita>::const_iterator it1 = visites.begin();
+                Visita v(date, p);
+                if(it1->getData() < date){
+                    visites.insert(++it1, v);
+                } 
+                else {
+                    it1++;
+                }
+            }
+            it++;
+        }
+    }
