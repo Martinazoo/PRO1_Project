@@ -164,20 +164,21 @@
             if(it->getName() == d.getName()){
                 cout << 3 << endl;
                 list<Visita> visi = d.getList();
+                /*
                 cout << 4 << endl; 
                 Pacient x = it->getList().front().getPacient();
                 cout << 5 << endl; 
                 cout << x << endl; 
                 cout << d.getList().front().getPacient() << endl;
+                */
                 list<Visita>::iterator it1 = visi.begin();
                 bool insert = false; 
-                cout << it1->getPacient() << endl; 
+                cout << 7 << endl; 
                 while (it1 != visi.end() and not insert){
-                    if(it1->getData() < v.getData()){
                         cout << 2 << endl; 
                         insert = true;
                         visi.insert(it1,v);
-                    }
+                        cout << it1->getPacient() << endl; 
                     it1++;
                 }
                 
