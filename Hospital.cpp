@@ -155,20 +155,45 @@
         p = bstpacient.find(p).second;
         return p;
     }
-    void Hospital::programar_visita(const Pacient &p, const Doctor &d, const Data &date){
-        list<Doctor>::const_iterator it = doctors.begin();
+    void Hospital::programar_visita(const Pacient &p, Doctor &d, const Data &date){
+        list<Doctor>::const_iterator it = doctors.begin(); 
         Visita v(date, p);
         bool find = false;
         while (it != doctors.end() and not find){
+            cout << 1 << endl;
             if(it->getName() == d.getName()){
+                cout << 3 << endl;
+                list<Visita> visi = d.getList();
+                cout << 4 << endl; 
+                Pacient x = it->getList().front().getPacient();
+                cout << 5 << endl; 
+                cout << x << endl; 
+                cout << d.getList().front().getPacient() << endl;
+                list<Visita>::iterator it1 = visi.begin();
+                bool insert = false; 
+                cout << it1->getPacient() << endl; 
+                while (it1 != visi.end() and not insert){
+                    if(it1->getData() < v.getData()){
+                        cout << 2 << endl; 
+                        insert = true;
+                        visi.insert(it1,v);
+                    }
+                    it1++;
+                }
+                
+                /*cout << it->getList().begin()->getData() << endl;
+                cout << 2 << endl; 
                 list<Visita> visites = it->getList();
-                list<Visita>::const_iterator it1 = visites.begin();
+                cout << 3 << endl; 
+                list<Visita>::iterator it1 = it->getList().begin(); // error aqui en esta funcio
+                cout << it1->getPacient() << it1->getData() << endl;
                 if(it1->getData() < date){
                     visites.insert(++it1, v);
                 } 
                 else {
                     it1++;
-                }
+                }*/
+
             }
             it++;
         }

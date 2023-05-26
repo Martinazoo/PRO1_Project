@@ -29,7 +29,7 @@ class Doctor {
         Doctor();
 
         Doctor(string nom);
-
+        
         //Consultors
 
         string getName() const;
@@ -40,6 +40,7 @@ class Doctor {
         friend ostream& operator<<(ostream &os, const Doctor &d);
         list<Visita> addvisita (Pacient p, Data d);
         void baixa_pacient (string &s);
+        void insert_visita (Visita &v, Doctor &d);
 
 
 };

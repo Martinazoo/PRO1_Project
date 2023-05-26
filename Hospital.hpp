@@ -52,6 +52,6 @@ class Hospital {
         void mostrar_programacio_visites();
         void cancellar_visita(string &u, string &d, Data &date);
         Pacient nametoPacient (string const &s);
-        void programar_visita(const Pacient &p, const Doctor &d, const Data &date);
+        void programar_visita(const Pacient &p, Doctor &d, const Data &date);
 };
 #endif

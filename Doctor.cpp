@@ -46,3 +46,16 @@
             it++;
         }
     }
+    void insert_visita (Visita &v, Doctor &d){
+        list<Visita> visi = d.getList();
+        list<Visita>::iterator it = visi.begin();
+        bool insert = false; 
+        while (it != visi.end() and not insert){
+            if(it->getData() < v.getData()){
+                insert = true;
+                visi.insert(it,v);
+            }
+            it++;
+        }
+        
+    }
