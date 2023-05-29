@@ -41,4 +41,8 @@ tractar_seguent_pacient
 tractar_seguent_pacient
   error
 llista_espera
-  
+mostrar_programacio_visites 
+  Dr_Smith
+  2/5/2023 Jane_Jones
+  Dr_Cooper
+baixa_pacient Jane_Jones

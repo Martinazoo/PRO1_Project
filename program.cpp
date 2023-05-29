@@ -53,7 +53,9 @@ int main() {
           cout << inst << endl;
           Queue<Pacient> paci;
           paci = h.getPacients();
-          h.printPacients(paci);
+          if(!h.getPacients().empty()){
+            h.printPacients(paci);
+          }
 
         } else if (inst == "tractar_seguent_pacient"){
           cout << inst << endl;
