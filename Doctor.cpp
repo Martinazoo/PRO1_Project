@@ -37,25 +37,83 @@
     }
     void Doctor::baixa_pacient (string &s){
         list<Visita>::iterator it = visites.begin();
-        bool trobat = false;
-        while(it != visites.end() and not trobat){
+        while(it != visites.end()){
             if(s == it->getPacient().getNom()){
-                trobat = true;
-                visites.erase(it);
+                it = visites.erase(it);
             }
-            it++;
-        }
+            //cout << "sumo" << endl;
+            else {
+                it++;
+            }
+        } 
     }
-    void insert_visita (Visita &v, Doctor &d){
-        list<Visita> visi = d.getList();
-        list<Visita>::iterator it = visi.begin();
-        bool insert = false; 
-        while (it != visi.end() and not insert){
-            if(it->getData() < v.getData()){
-                insert = true;
-                visi.insert(it,v);
+    void Doctor::insert_visita (const Visita &v,const Data &date){
+        list<Visita>::iterator it = visites.begin();
+        bool inserted = false;
+        if(visites.empty()){
+            visites.push_back(v);
+        }
+        else {
+            while (it != visites.end() and !inserted){
+                if(it->getData() <= date){
+                    it++;
+                }
+                else {
+                    visites.insert(it,v);
+                    inserted = true;
+                    it++;
+                }
+                
             }
-            it++;
         }
         
     }
+
+    void Doctor::eliminar_visita (const Visita &v){
+        list<Visita>::iterator it = visites.begin();
+        bool removed = false;
+        if(visites.empty()) cout << " error" << endl;
+        else {
+            while (it != visites.end() and not removed){
+                //cout << it-> getPacient() << " " << it->getData() << endl; 
+                if (it->getPacient() == v.getPacient()){
+                    
+                    if(it->getData() == v.getData()){
+                        
+                        //cout << it->getPacient() <<  " " << it->getData() << endl; 
+                        
+                        it = visites.erase(it);
+                        removed = true;
+                        if(removed) return;
+                         
+                    }
+                    
+                }
+                
+                it++;
+            }
+          
+        }
+        
+    }
+
+    bool Doctor::pacient_is_in_list(const Pacient &p){
+    list<Visita>::iterator it = visites.begin();
+    while (it != visites.end()){
+        if(it->getPacient().getNom() == p.getNom()){
+            return true;
+        }
+        it++;
+    }
+    return false;
+    
+    }
+    bool Doctor::visita_is_in_list(const Visita &v){
+       list<Visita>::iterator it = visites.begin();
+       while(it != visites.end()){
+        if(it->getData() == v.getData()) return true;
+        it++;
+       }
+       return false;
+    }
+    

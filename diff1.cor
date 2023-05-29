@@ -48,21 +48,50 @@ llista_espera
   John_Doe  35 febre 3
   Jane_Smith  4 mal_de_cap 3
   Alice_Brown  30 mal_de_panxa 3
-1
-3
-7
-1
-1
-3
-7
-1
-1
-3
-7
-1
-1
-3
-7
-1
+programar_visita Alice_Brown Dr_Smith 30 4 2023
+programar_visita Mary_Williams Dr_Smith 27 4 2023
+programar_visita Alice_Brown Dr_Smith 28 4 2023
+programar_visita John_Doe Dr_Smith 28 4 2023
 mostrar_programacio_visites 
-Dr_Smith
+  Dr_Smith
+  27/4/2023 Mary_Williams
+  28/4/2023 Alice_Brown
+  28/4/2023 John_Doe
+  30/4/2023 Alice_Brown
+  Dr_Cooper
+cancellar_visita Alice_Brown Dr_Smith 30 4 2023
+mostrar_programacio_visites 
+  Dr_Smith
+  27/4/2023 Mary_Williams
+  28/4/2023 Alice_Brown
+  28/4/2023 John_Doe
+  Dr_Cooper
+programar_visita Alice_Brown Dr_Cooper 1 5 2023
+baixa_pacient David_Lee
+llista_espera
+  Mary_Williams  25 encostipat 2
+  John_Doe  35 febre 3
+  Jane_Smith  4 mal_de_cap 3
+  Alice_Brown  30 mal_de_panxa 3
+baixa_pacient John_Doe
+mostrar_programacio_visites 
+  Dr_Smith
+  27/4/2023 Mary_Williams
+  28/4/2023 Alice_Brown
+  Dr_Cooper
+  1/5/2023 Alice_Brown
+llista_espera
+  Mary_Williams  25 encostipat 2
+  Jane_Smith  4 mal_de_cap 3
+  Alice_Brown  30 mal_de_panxa 3
+baixa_pacient Alice_Brown
+mostrar_programacio_visites 
+  Dr_Smith
+  27/4/2023 Mary_Williams
+  Dr_Cooper
+llista_espera
+  Mary_Williams  25 encostipat 2
+  Jane_Smith  4 mal_de_cap 3
+cancellar_visita Alice_Brown Dr_Smith 28 4 2023
+  error
+fi

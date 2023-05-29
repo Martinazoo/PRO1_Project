@@ -62,6 +62,15 @@
         }
         return false;
     }
+
+    bool Hospital::visitaExists (const Visita&v){
+        list<Doctor>::iterator it = doctors.begin();
+        while(it != doctors.end()){
+            if(it->visita_is_in_list(v)) return true;
+            it++;
+        }
+        return false;
+    }
     
     void Hospital::printPacients(Queue<Pacient> &pacients)const{
 
@@ -84,17 +93,13 @@
         doctors.push_back(d);
     }
     void Hospital::baixa_pacient(string &s){
+        
         pacients.remove(s);
         bstpacient.remove(s);
+       
         list<Doctor>::iterator it = doctors.begin();
         while(it != doctors.end()){
-            list<Visita>::iterator it1 = it->getList().begin();
-            while(it1 != it->getList().end()){
-                if(it1->getPacient().getNom() == s) it1 = it->getList().erase(it1);
-                else {
-                    it1++;
-                }
-            }
+            it->baixa_pacient(s);
             it++;
         }
 
@@ -106,7 +111,10 @@
         pacients.push(p);
     }
     void Hospital::pop_pacients(){
-        pacients.pop();
+        if(pacients.empty()) cout << "  error" << endl;
+        else {
+            pacients.pop();
+        }
     }
     Pacient Hospital::get_Pacient(string &s){
         Pacient ss = bstpacient.find(s).second;
@@ -116,86 +124,68 @@
        
     }
     void Hospital::mostrar_programacio_visites(){
-        list<Doctor>::iterator it = doctors.begin();
-        while(it != doctors.end()){
-            cout << it->getName() << endl;
-            list<Visita>::iterator it1 = it->getList().begin();
-            while(it1 != it->getList().end()){
-                cout << "  "<< it1->getData() << " " << it1->getPacient() << endl;
-                ++it1;
+        for(list<Doctor>::iterator it = doctors.begin(); it != doctors.end(); ++it ){
+            cout << "  " << it->getName() << endl; 
+            list<Visita>::iterator it1;
+            list<Visita> visites = it->getList();
+            for(it1 = visites.begin(); it1 != visites.end(); ++it1){
+                cout << "  " << *it1; 
             }
-            ++it;
         }
     }
-    void Hospital::cancellar_visita(string &u, string &d, Data &date){
-        if(not doctorExists(d) and not pacientExists(u).first){
-            cout << " error" << endl;
+    void Hospital::cancellar_visita(string &u, Doctor &d, Data &date){
+        Pacient p = nametoPacient(u);
+        Visita v(date, p);
+        /*cout << v.getData() << "es la data " << endl;
+        cout << doctor_is_in_list(d) << endl;
+        cout << pacientExists(p).first << endl; 
+        cout << d.visita_is_in_list(v) << endl; 
+        */
+        //cout << doctor_is_in_list(d) << " " << d.pacient_is_in_list(p) << " " << visitaExists(v) << endl;
+        if(not doctor_is_in_list(d) or not pacientExists(p).first /*or not d.visita_is_in_list(v)*/){
+            cout << "  error" << endl;
         }
         else {
             list<Doctor>::iterator it = doctors.begin();
             bool find = false;
             while(it != doctors.end() and not find){
-                if(it->getName() == d){
-                    list<Visita>::iterator it1 = it->getList().begin();
-                    while(it1 != it->getList().end()){
-                        if(it1->getPacient().getNom() == u and it1->getData() == date){
-                            find = true;
-                            it->getList().erase(it1);
-                        }
-                        it1++;
-                    }
+                if(it->getName() == d.getName()){
+                    find = true; 
+                    it->eliminar_visita(v);
                 }
-                it++;
-            }
+            }    
         }
     }
+
+    
 
     Pacient Hospital::nametoPacient (string const &s){
         Pacient p(s);
         p = bstpacient.find(p).second;
         return p;
     }
-    void Hospital::programar_visita(const Pacient &p, Doctor &d, const Data &date){
-        list<Doctor>::const_iterator it = doctors.begin(); 
-        Visita v(date, p);
+    void Hospital::programar_visita(const Pacient &p,const Doctor &d, Data &date){
+        Visita v(date,p);
+        list<Doctor>::iterator it = doctors.begin();
         bool find = false;
-        while (it != doctors.end() and not find){
-            cout << 1 << endl;
+        while(it != doctors.end() and not find){
             if(it->getName() == d.getName()){
-                cout << 3 << endl;
-                list<Visita> visi = d.getList();
-                /*
-                cout << 4 << endl; 
-                Pacient x = it->getList().front().getPacient();
-                cout << 5 << endl; 
-                cout << x << endl; 
-                cout << d.getList().front().getPacient() << endl;
-                */
-                list<Visita>::iterator it1 = visi.begin();
-                bool insert = false; 
-                cout << 7 << endl; 
-                while (it1 != visi.end() and not insert){
-                        cout << 2 << endl; 
-                        insert = true;
-                        visi.insert(it1,v);
-                        cout << it1->getPacient() << endl; 
-                    it1++;
-                }
-                
-                /*cout << it->getList().begin()->getData() << endl;
-                cout << 2 << endl; 
-                list<Visita> visites = it->getList();
-                cout << 3 << endl; 
-                list<Visita>::iterator it1 = it->getList().begin(); // error aqui en esta funcio
-                cout << it1->getPacient() << it1->getData() << endl;
-                if(it1->getData() < date){
-                    visites.insert(++it1, v);
-                } 
-                else {
-                    it1++;
-                }*/
-
+                it->insert_visita(v, date);
             }
             it++;
         }
+        
     }
+
+    bool Hospital::doctor_is_in_list (const Doctor&d) {
+        list<Doctor>::iterator it = doctors.begin();
+        while (it != doctors.end()){
+            if(d.getName() == it->getName()){
+                return true;
+            }
+            it++;
+        }
+        return false;
+
+    }
+    

@@ -37,6 +37,9 @@ bool Data::operator<(const Data &data) {
 	return dia < data.dia  or (dia == data.dia and mes < data.mes) or (dia == data.dia and mes == data.mes and any < data.any);
 }
 
+bool Data::operator<=(const Data &data){
+    return dia <= data.dia or (dia == data.dia and mes <= data.mes) or (dia == data.dia and mes == data.mes and any <= data.any);
+}
 //-----------
 // L/E
 //-----------

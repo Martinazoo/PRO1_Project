@@ -29,3 +29,13 @@ Pacient Visita::getPacient() const
 {
     return pacient;
 }
+
+
+void Visita::modify_visita (Data &date){
+    this->data = date;    
+}
+
+ostream& operator<<(ostream &os, const Visita &v){
+    os << v.getData().getDia() <<"/"<< v.getData().getMes() <<"/" << v.getData().getAny() << " " << v.getPacient().getNom() << endl; 
+    return os;
+}

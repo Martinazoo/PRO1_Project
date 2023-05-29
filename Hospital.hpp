@@ -39,6 +39,7 @@ class Hospital {
         pair<bool, Pacient> pacientExists (const Pacient &p)const;
         bool grav_range (const int &grav)const;
         bool doctorExists (Doctor d) const;
+        bool visitaExists (const Visita&v);
         void printPacients (Queue<Pacient> &pacients)const;
         //Modificadors
         /* Pre: una llista de Pacient pacients , i un Pacient p */
@@ -50,8 +51,9 @@ class Hospital {
         void pop_pacients();
         Pacient get_Pacient(string &s);
         void mostrar_programacio_visites();
-        void cancellar_visita(string &u, string &d, Data &date);
+        void cancellar_visita(string &u, Doctor &d, Data &date);
         Pacient nametoPacient (string const &s);
-        void programar_visita(const Pacient &p, Doctor &d, const Data &date);
+        void programar_visita(const Pacient &p,const Doctor &d, Data &date);
+        bool doctor_is_in_list (const Doctor&d);
 };
 #endif

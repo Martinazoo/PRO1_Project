@@ -13,6 +13,7 @@ using namespace std;
  *  l'estat de salut (int) d'un pacient.
  */
 
+
 class Doctor {
 
     private:
@@ -40,8 +41,10 @@ class Doctor {
         friend ostream& operator<<(ostream &os, const Doctor &d);
         list<Visita> addvisita (Pacient p, Data d);
         void baixa_pacient (string &s);
-        void insert_visita (Visita &v, Doctor &d);
-
+        void insert_visita (const Visita &v,const Data &date);
+        void eliminar_visita (const Visita &v);
+        bool pacient_is_in_list(const Pacient &p);
+        bool visita_is_in_list(const Visita &v);
 
 };
 #endif

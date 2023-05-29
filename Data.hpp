@@ -55,6 +55,7 @@ class Data {
 		   no ho és (false) */
 		bool operator<(const Data &d);
 		
+		bool operator<=(const Data &data);
 				
 		//-----------
 		// L/E

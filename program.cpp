@@ -77,21 +77,22 @@ int main() {
           Data date;
           cin >> namep >> d >> date;
           Pacient p = h.nametoPacient(namep);
+          cout << "programar_visita " << namep << " " << d << " " << date << endl; 
           if((h.pacientExists(namep).first == 0) or (h.doctorExists(d) == 0)) cout << "  error" << endl;
           else{
             h.programar_visita(p, d, date);
           }
 
         } else if (inst == "cancellar_visita"){
-          string user;
-          string doctor;
-          Data day;
-          cin >> user >> doctor >> day;
-          cout << inst << " " << doctor << " " << day;
-          h.cancellar_visita(user, doctor, day);
+          string pacient;
+          Doctor d;
+          Data date;
+          cin >> pacient >> d >> date;
+          cout << inst << " " << pacient << " " << d << " " << date << endl;
+          h.cancellar_visita(pacient, d, date); 
           
         } else if (inst == "mostrar_programacio_visites"){
-          cout << inst << " " << endl;
+          cout << inst << " " << endl; 
           h.mostrar_programacio_visites();
         }
         else {
