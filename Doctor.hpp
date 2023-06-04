@@ -29,22 +29,37 @@ class Doctor {
 		/* Post: crea un doctor buit */
         Doctor();
 
+        /* Pre: cert */
+		/* Post: crea un Doctor amb el nom desitjat */
         Doctor(string nom);
         
         //Consultors
-
+        
+        /* Pre: cert */
+		/* Post: retorna el nom del doctor */
         string getName() const;
 
+        /* Pre: cert */
+		/* Post: retorna la llista de visites del doctor*/
         list<Visita> getList() const;
+
+        /* Pre: el nom del pacient que volem baixar */
+		/* Post: treu totes les visites del pacient donat*/
+        void baixa_pacient (string &s);
+
+        /* Pre: Una visita i una data */
+		/* Post: Insereix una visita a la llista de visites del doctor*/
+        void insert_visita (const Visita &v,const Data &date);
+
+        /* Pre: la visita que desitja eliminar de la llista */
+		/* Post: elimina la visita de la llista de visites*/
+        void eliminar_visita (const Visita &v);
+
+
 
         friend istream& operator>>(istream &is, Doctor &d);
         friend ostream& operator<<(ostream &os, const Doctor &d);
-        list<Visita> addvisita (Pacient p, Data d);
-        void baixa_pacient (string &s);
-        void insert_visita (const Visita &v,const Data &date);
-        void eliminar_visita (const Visita &v);
-        bool pacient_is_in_list(const Pacient &p);
-        bool visita_is_in_list(const Visita &v);
+        
 
 };
 #endif

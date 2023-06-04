@@ -52,10 +52,6 @@ class Hospital {
         bool doctorExists (Doctor d) const;
 
         /* Pre: cert */
-        /* Post: retorna un booleà que retorna true en cas de que la Visita "v" existeixi, false en cas contrari */
-        bool visitaExists (const Visita&v);
-
-        /* Pre: cert */
         /* Post: retorna un booleà, true en cas de que "d" estigui a la llista de Doctor del paràmetre implícit, false
         en cas contrari */
         bool doctor_is_in_list (const Doctor&d);

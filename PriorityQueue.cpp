@@ -113,9 +113,8 @@ void Queue<T>::remove(T value) {
 		return;
 	}
 	
-
 	Item* pfirst = first;
-	if (pfirst->value == value){ ///FALTA POSAR EL LAST!!!!!!!!!!!!!!!!!
+	if (pfirst->value == value){
 		delete first;
 		first = pfirst->next;
 	} else {

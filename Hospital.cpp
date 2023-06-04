@@ -71,16 +71,7 @@
             return false;
         }
 
-        /* Pre: cert */
-        /* Post: retorna un booleà que retorna true en cas de que la Visita "v" existeixi, false en cas contrari */
-        bool Hospital::visitaExists (const Visita&v){
-            list<Doctor>::iterator it = doctors.begin();
-            while(it != doctors.end()){
-                if(it->visita_is_in_list(v)) return true;
-                it++;
-            }
-            return false;
-        }
+
 
         /* Pre: un doctor d */
         /* Post: retorna un booleà, true en cas de que el Doctor existeixi, false

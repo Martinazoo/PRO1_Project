@@ -106,6 +106,8 @@ void BST<T>::setValue(const T& d, const T& value) {
 //-----------
 // Consultors
 //-----------
+
+
 template <typename T>
 void BST<T>::find_aux(Item *r, T& d, bool& trobat) const{
 
@@ -115,8 +117,10 @@ void BST<T>::find_aux(Item *r, T& d, bool& trobat) const{
 			d = r->data;
 		} else{
 			if (r->data < d){
+				//HI: alçada del arbre = alçada del arbre - 1
 				find_aux(r->right, d, trobat);
 			} else{
+				//HI: alçada del arbre = alçada del arbre - 1
 				find_aux(r->left, d, trobat);
 			}
 		} 

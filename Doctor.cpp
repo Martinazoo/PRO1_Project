@@ -30,18 +30,13 @@
     ostream& operator<<(ostream &os, const Doctor &d){
         return os << d.nom;
     }
-    list<Visita> Doctor::addvisita(Pacient p, Data d){
-         cout << p << d << endl;
-         list<Visita> a;
-         return a;   
-    }
+
     void Doctor::baixa_pacient (string &s){
         list<Visita>::iterator it = visites.begin();
         while(it != visites.end()){
             if(s == it->getPacient().getNom()){
                 it = visites.erase(it);
             }
-            //cout << "sumo" << endl;
             else {
                 it++;
             }
@@ -96,24 +91,3 @@
         }
         
     }
-
-    bool Doctor::pacient_is_in_list(const Pacient &p){
-    list<Visita>::iterator it = visites.begin();
-    while (it != visites.end()){
-        if(it->getPacient().getNom() == p.getNom()){
-            return true;
-        }
-        it++;
-    }
-    return false;
-    
-    }
-    bool Doctor::visita_is_in_list(const Visita &v){
-       list<Visita>::iterator it = visites.begin();
-       while(it != visites.end()){
-        if(it->getData() == v.getData()) return true;
-        it++;
-       }
-       return false;
-    }
-    

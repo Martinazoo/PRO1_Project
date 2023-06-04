@@ -60,8 +60,10 @@ private:
 	   segon valor rebut per paràmetre (newData), de
        la jerarquia de nodes apuntada per item */
 	void setValue(Item *node, const T& d, const T& newData);
-	
-
+		
+	//Pre: cert
+	//Post: Et retorna la direccio del parametre que busques dins del arbre si el troba, i un bolea que diu si el trobes o no
+	//Fita: es criden els fills dels arbres
 	void find_aux(Item* r, T& d, bool &trobat) const; //posar al privat
 
 
