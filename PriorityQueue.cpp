@@ -108,9 +108,11 @@ void Queue<T>::push(T value) {
 
 template <typename T>
 void Queue<T>::remove(T value) {
+	
 	if (first == NULL) {
-		exit(1);
+		return;
 	}
+	
 
 	Item* pfirst = first;
 	if (pfirst->value == value){ ///FALTA POSAR EL LAST!!!!!!!!!!!!!!!!!

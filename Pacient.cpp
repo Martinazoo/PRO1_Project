@@ -52,6 +52,7 @@
             return nom;
         }
 
+
 		/* Pre: cert */
 		/* Post: retorna l'edat del pacient paràmetre implicit */
 		int Pacient::getEdat() const

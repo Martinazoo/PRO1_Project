@@ -46,7 +46,7 @@ class Hospital {
         /* Post: afegeix un Pacient al final de la llista */
         void addPacient (Pacient &p);
         void addDoctor(Doctor &d);
-        void baixa_pacient(string &s);
+        void baixa_pacient(Pacient &p);
         void modify_estat_pacient (Pacient &p, int grav); 
         void pop_pacients();
         Pacient get_Pacient(string &s);

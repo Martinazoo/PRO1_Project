@@ -19,6 +19,7 @@ int main() {
 	// Processar instruccions
     string inst;
     while ((cin >> inst) and (inst != "fi")) {
+
         if (inst == "alta_pacient") { 
           Pacient p;
           cin >> p; 
@@ -29,15 +30,15 @@ int main() {
           else {
             cout << "  error" << endl;
           }
-			
-
+          
         } else if (inst == "baixa_pacient") {
           string name;
           cin >> name;
           cout << inst << " " << name << endl; 
-          if (not h.pacientExists(name).first) cout << "  error" << endl;
+          Pacient pac(name);
+          if (not h.pacientExists(pac).first) cout << "  error" << endl;
           else {
-            h.baixa_pacient(name);
+            h.baixa_pacient(pac);
           }
 
         } else if (inst == "alta_doctor") { //comparar gravetat valida

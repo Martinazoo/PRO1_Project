@@ -92,17 +92,16 @@
     {
         doctors.push_back(d);
     }
-    void Hospital::baixa_pacient(string &s){
-        
-        pacients.remove(s);
-        bstpacient.remove(s);
+    void Hospital::baixa_pacient(Pacient &p){
+        pacients.remove(p);
+        bstpacient.remove(p);
        
         list<Doctor>::iterator it = doctors.begin();
         while(it != doctors.end()){
-            it->baixa_pacient(s);
+            string nom = p.getNom();
+            it->baixa_pacient(nom);
             it++;
         }
-
     }
     void Hospital::modify_estat_pacient (Pacient &p, int grav){ 
         bstpacient.find(p).second;
