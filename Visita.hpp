@@ -37,7 +37,21 @@ class Visita {
 		/* Post: retorna el pacient de la visita paràmetre implícit */
 		Pacient getPacient() const;
 		
-		friend ostream& operator<<(ostream &os, const Visita &v);
+		//-----------
+		// Modificadors
+		//-----------
+
+		/* Pre: la data d'una visita */
+		/* Post: s'h modificat la data del paràmetre implícit*/
 		void modify_visita (Data &date);
+
+		//-----------
+		// Escriptura
+		//-----------
+
+		/* Pre: cert */
+		/* Post: s'ha escrit la data juntament amb el nom del Pacient */
+		friend ostream& operator<<(ostream &os, const Visita &v);
+		
 };
 #endif

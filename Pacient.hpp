@@ -91,10 +91,7 @@ class Pacient {
 		/* Post: retorna un booleà que indica si el nom del pacient del paràmetre
 		   implícit és més gran al nom del Pacient p rebut (true) o
 		   no ho és (false) */
-		bool operator> (const Pacient &p)const;
-
-		// PODEU AFEGIR ELS MÈTODES QUE NECESSITEU
-		
+		bool operator> (const Pacient &p)const;	
 		
 		//-----------
 		// L/E

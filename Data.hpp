@@ -24,7 +24,7 @@ class Data {
 		Data ();
 	
 		/* Pre: cert */
-		/* Post: crea una data amb el dia, mes i any rebuts per paràmetre */	
+		/* Post: crea una data amb el dia, mes i any rebuts */	
 		Data(int dia, int mes, int any);
 		
 		//-----------
@@ -55,6 +55,10 @@ class Data {
 		   no ho és (false) */
 		bool operator<(const Data &d);
 		
+		/* Pre: cert */
+		/* Post: retorna un booleà que indica si la data paràmetre
+		   implícit és anterior o igual a la data 'd' rebuda (true) o
+		   no ho és (false) */
 		bool operator<=(const Data &data);
 				
 		//-----------

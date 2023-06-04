@@ -113,9 +113,6 @@
 		bool Pacient::operator> (const Pacient &p)const{
 			return this->nom > p.getNom();
 		}
-
-		// PODEU AFEGIR ELS MÈTODES QUE NECESSITEU
-		
 		
 		//-----------
 		// L/E

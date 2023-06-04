@@ -46,3 +46,17 @@ mostrar_programacio_visites
   2/5/2023 Jane_Jones
   Dr_Cooper
 baixa_pacient Jane_Jones
+baixa_pacient Charlie
+  error
+mostrar_programacio_visites 
+  Dr_Smith
+  Dr_Cooper
+programar_visita Jane Dr_Smith 5 5 2023
+  error
+modificar_estat_pacient Alexa_Doe 1
+llista_espera
+  Alexa_Doe  15 febre 1
+tractar_seguent_pacient
+tractar_seguent_pacient
+  error
+fi
