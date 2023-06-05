@@ -1,4 +1,0 @@
-alta_pacient Alice 30 grip 3
-alta_doctor Dr_Smith
-programar_visita Alice Dr_Smith 30 4 2023
-mostrar_programacio_visites

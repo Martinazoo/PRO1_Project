@@ -33,7 +33,9 @@ class Doctor {
 		/* Post: crea un Doctor amb el nom desitjat */
         Doctor(string nom);
         
-        //Consultors
+        //-------------
+		// Consultors
+		//-------------
         
         /* Pre: cert */
 		/* Post: retorna el nom del doctor */
@@ -42,6 +44,10 @@ class Doctor {
         /* Pre: cert */
 		/* Post: retorna la llista de visites del doctor*/
         list<Visita> getList() const;
+        
+        //-------------
+		// Modificadors
+		//-------------
 
         /* Pre: el nom del pacient que volem baixar */
 		/* Post: treu totes les visites del pacient donat*/
@@ -55,9 +61,16 @@ class Doctor {
 		/* Post: elimina la visita de la llista de visites*/
         void eliminar_visita (const Visita &v);
 
+        //-----------
+		// L/E
+		//-----------
 
-
+        /* Pre: un doctor d*/
+        /* Post: el doctor d passa a tenir els atributs llegits pel canal d'entrada (string)*/
         friend istream& operator>>(istream &is, Doctor &d);
+        
+        /* Pre: un Doctor d*/
+        /* Post: s'ha escrit el nom del doctor "d" al canal de sortida */
         friend ostream& operator<<(ostream &os, const Doctor &d);
         
 
